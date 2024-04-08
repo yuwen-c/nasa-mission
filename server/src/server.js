@@ -11,7 +11,7 @@ const server = http.createServer(app);
 // ==== 設定PORT，在script指令裡面設定，在code裡面拿到env ====
 // 透過`"start": "PORT=5000 node src/server.js",`指令來拿到port。
 // console出來的port會是字串5000
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8001;
 
 
 

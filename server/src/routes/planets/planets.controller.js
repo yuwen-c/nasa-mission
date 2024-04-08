@@ -1,6 +1,4 @@
-// 定義getAllPlanets
-
-const planets = [];
+const planets = require('../../models/planets.model');
 
 function getAllPlanets(req, res) {
   console.log('Getting all planets');

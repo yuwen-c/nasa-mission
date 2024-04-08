@@ -5,8 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "PORT=5001 node src/server.js",
-    "watch": "PORT=5001 nodemon src/server.js"
+    "start": "PORT=8000 node src/server.js",
+    "watch": "PORT=8000 nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
