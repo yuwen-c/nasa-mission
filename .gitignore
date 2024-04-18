@@ -32,3 +32,7 @@ secrets.txt
 # Ignore system files
 .DS_Store
 Thumbs.db
+
+# 開發結束再追蹤
+/public/
+/server/public/
