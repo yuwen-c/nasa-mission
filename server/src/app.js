@@ -15,8 +15,8 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 // 好像沒放也可以？
 app.use('/', express.static(path.join(__dirname, '..', 'public')));
 
-app.use(planetsRouter);
-app.use(launchesRouter);
+app.use('/planets', planetsRouter);
+app.use('/launches', launchesRouter);
 // 所有不符合上述其他路徑的路由都會導向這個route
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));

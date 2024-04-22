@@ -15,8 +15,21 @@ async function httpGetLaunches() {
 }
 
 async function httpSubmitLaunch(launch) {
-  // TODO: Once API is ready.
-  // Submit given launch data to launch system.
+  try {
+    return await fetch(`${API_URL}/launches`, {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(launch),
+    });
+  }
+  // 避免其他因為網路問題導致的錯誤
+  catch (error) {
+    return {
+      ok: false
+    }
+  }
 }
 
 async function httpAbortLaunch(id) {

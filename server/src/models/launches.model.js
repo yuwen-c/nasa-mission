@@ -5,7 +5,7 @@ const launch = {
   mission: 'Kepler Exploration X',
   rocket: 'Explorer IS1',
   launchDate: new Date('December 27, 2030'),
-  destination: 'Kepler-442 b',
+  target: 'Kepler-442 b',
   customer: ['ZTM', 'NASA'],
   upcoming: true,
   success: true,
@@ -18,6 +18,25 @@ function getAllLaunches() {
   return Array.from(launches.values());
 }
 
+// 從launches map中得到最新的launch的flightNumber
+function getLatestFlightNumber() {
+  return Math.max(...launches.keys());
+}
+
+function addNewLaunch(launch) {
+  const lastLaunch = getLatestFlightNumber();
+  const modifiedLaunch = {
+    ...launch,
+    flightNumber: lastLaunch + 1,
+    upcoming: true,
+    success: true,
+    launchDate: new Date(launch.launchDate),
+  };
+  launches.set(lastLaunch+1, modifiedLaunch);
+  return modifiedLaunch;
+}
+
 module.exports = {
-  getAllLaunches
+  getAllLaunches,
+  addNewLaunch
 };
